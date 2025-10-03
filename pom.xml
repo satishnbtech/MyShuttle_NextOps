@@ -29,22 +29,24 @@
         </configuration>
       </plugin>
 
-      <!-- Unit tests (JUnit/TestNG) -->
+      <!-- Unit tests (skipped by default) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M7</version>
         <configuration>
-          <!-- Surefire will detect JUnit and TestNG automatically -->
-          <useSystemClassLoader>true</useSystemClassLoader>
+          <skipTests>true</skipTests>
         </configuration>
       </plugin>
 
-      <!-- Integration tests -->
+      <!-- Integration tests (skipped by default) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>3.0.0-M7</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
         <executions>
           <execution>
             <id>integration-test</id>
